@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>3.1.5</version>
   </parent>
-
   <groupId>org.owasp.webgoat</groupId>
   <artifactId>webgoat</artifactId>
   <version>2023.9-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <name>WebGoat</name>
   <description>WebGoat, a deliberately insecure Web Application</description>
   <url>https://github.com/WebGoat/WebGoat</url>
@@ -27,7 +24,6 @@
       <url>https://www.gnu.org/licenses/gpl-2.0.txt</url>
     </license>
   </licenses>
-
   <developers>
     <developer>
       <id>mayhew64</id>
@@ -61,17 +57,17 @@
     <developer>
       <id>jwayman</id>
       <name>Jeff Wayman</name>
-      <email></email>
+      <email/>
     </developer>
     <developer>
       <id>dcowden</id>
       <name>Dave Cowden</name>
-      <email></email>
+      <email/>
     </developer>
     <developer>
       <id>lawson89</id>
       <name>Richard Lawson</name>
-      <email></email>
+      <email/>
     </developer>
     <developer>
       <id>dougmorato</id>
@@ -85,7 +81,6 @@
       </properties>
     </developer>
   </developers>
-
   <mailingLists>
     <mailingList>
       <name>OWASP WebGoat Mailing List</name>
@@ -101,18 +96,14 @@
     <tag>HEAD</tag>
     <url>https://github.com/WebGoat/WebGoat</url>
   </scm>
-
   <issueManagement>
     <system>Github Issues</system>
     <url>https://github.com/WebGoat/WebGoat/issues</url>
   </issueManagement>
-
   <properties>
-    <!-- Shared properties with plugins and version numbers across submodules-->
     <asciidoctorj.version>2.5.10</asciidoctorj.version>
     <bootstrap.version>5.3.2</bootstrap.version>
     <cglib.version>3.3.0</cglib.version>
-    <!-- do not update necessary for lesson -->
     <checkstyle.version>3.3.1</checkstyle.version>
     <commons-collections.version>3.2.1</commons-collections.version>
     <commons-io.version>2.15.1</commons-io.version>
@@ -135,7 +126,6 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <pmd.version>3.15.0</pmd.version>
-    <!-- Use UTF-8 Encoding -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <thymeleaf.version>3.1.1.RELEASE</thymeleaf.version>
@@ -147,19 +137,15 @@
     <wiremock.version>2.27.2</wiremock.version>
     <xml-resolver.version>1.2</xml-resolver.version>
     <xstream.version>1.4.5</xstream.version>
-    <!-- do not update necessary for lesson -->
     <zxcvbn.version>1.8.0</zxcvbn.version>
   </properties>
-
   <dependencyManagement>
     <dependencies>
-
       <dependency>
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm</artifactId>
         <version>9.5</version>
       </dependency>
-
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-exec</artifactId>
@@ -171,7 +157,6 @@
         <version>${asciidoctorj.version}</version>
       </dependency>
       <dependency>
-        <!-- jsoup HTML parser library @ https://jsoup.org/ -->
         <groupId>org.jsoup</groupId>
         <artifactId>jsoup</artifactId>
         <version>${jsoup.version}</version>
@@ -206,7 +191,6 @@
         <artifactId>jwks-rsa</artifactId>
         <version>0.22.1</version>
       </dependency>
-      <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
       <dependency>
         <groupId>com.auth0</groupId>
         <artifactId>java-jwt</artifactId>
@@ -371,7 +355,6 @@
       <groupId>com.auth0</groupId>
       <artifactId>jwks-rsa</artifactId>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
@@ -391,6 +374,7 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-text</artifactId>
+      <version>1.10.0</version>
     </dependency>
     <dependency>
       <groupId>org.bitbucket.b_c</groupId>
@@ -417,7 +401,6 @@
       <artifactId>jaxb-impl</artifactId>
       <scope>runtime</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -445,7 +428,6 @@
       <scope>runtime</scope>
     </dependency>
   </dependencies>
-
   <repositories>
     <repository>
       <snapshots>
@@ -464,7 +446,6 @@
       <url>https://repo.maven.apache.org/maven2</url>
     </pluginRepository>
   </pluginRepositories>
-
   <build>
     <plugins>
       <plugin>
@@ -474,7 +455,6 @@
           <excludeDevtools>true</excludeDevtools>
           <executable>true</executable>
           <mainClass>org.owasp.webgoat.server.StartWebGoat</mainClass>
-          <!-- See http://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-extract-specific-libraries-when-an-executable-jar-runs -->
           <requiresUnpack>
             <dependency>
               <groupId>org.asciidoctor</groupId>
@@ -582,8 +562,8 @@
               <includes>
                 <include>.gitignore</include>
               </includes>
-              <trimTrailingWhitespace></trimTrailingWhitespace>
-              <endWithNewline></endWithNewline>
+              <trimTrailingWhitespace/>
+              <endWithNewline/>
               <indent>
                 <tabs>true</tabs>
                 <spacesPerTab>4</spacesPerTab>
@@ -594,7 +574,7 @@
             <includes>
               <include>**/*.md</include>
             </includes>
-            <flexmark></flexmark>
+            <flexmark/>
           </markdown>
           <java>
             <includes>
@@ -602,7 +582,7 @@
               <include>src/test/java/**/*.java</include>
               <include>src/it/java/**/*.java</include>
             </includes>
-            <removeUnusedImports></removeUnusedImports>
+            <removeUnusedImports/>
             <googleJavaFormat>
               <style>GOOGLE</style>
               <reflowLongStrings>true</reflowLongStrings>
@@ -667,7 +647,6 @@
       </plugin>
     </plugins>
   </build>
-
   <profiles>
     <profile>
       <id>local-server</id>
@@ -709,7 +688,6 @@
                   <goal>start</goal>
                 </goals>
                 <phase>pre-integration-test</phase>
-
                 <configuration>
                   <workingDir>${project.build.directory}</workingDir>
                   <environment>
@@ -782,7 +760,6 @@
               <skipProvidedScope>false</skipProvidedScope>
               <skipRuntimeScope>false</skipRuntimeScope>
               <suppressionFiles>
-                <!--suppress UnresolvedMavenProperty -->
                 <suppressionFile>${maven.multiModuleProjectDirectory}/config/dependency-check/project-suppression.xml</suppressionFile>
               </suppressionFiles>
             </configuration>
@@ -798,7 +775,6 @@
       </build>
     </profile>
     <profile>
-      <!-- run with: mvn test -Pcoverage -->
       <id>coverage</id>
       <activation>
         <activeByDefault>false</activeByDefault>
